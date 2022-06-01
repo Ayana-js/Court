@@ -42,7 +42,7 @@ const Main = () => {
                 <img src={user} />
                 <p>{debtor.first_name} {debtor.last_name} {debtor.patronymic_name}</p>
             </div>
-            <NavLink to='/check-debt/content' >
+            <NavLink to='/check-debt/content' className='link' >
                 <div className='main'>
                     {cases.map(c =>
                         <div className='main-content'>
