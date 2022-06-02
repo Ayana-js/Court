@@ -17,9 +17,9 @@ const Content = () => {
                             <p className='description'> Судебный орган </p>
                             <p className='text'> {c.court} </p>
                             <p className='description'>Судебный исполнитель</p>
-                            <p className='text'>{c.executor.full_name}</p>
+                            <p className='text'>{executor? c.executor.full_name: '-------'}</p>
                             <p className='description'>Номер телефона</p>
-                            <p className='text'>{c.executor.phone_number}</p>
+                            <p className='text'>{executor? c.executor.phone_number: '-------'}</p>
                             <p className='description'>Номер дела</p>
                             <p className='text'>{c.case_number}</p>
                             <p className='description'>Категория задолженности</p>
