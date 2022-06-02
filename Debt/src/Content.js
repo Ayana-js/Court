@@ -5,32 +5,11 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 
 const Content = () => {
-    const [debtor, setDebtor] = useState({})
-    const [cases, setCases] = useState([])
-    const phone = localStorage.getItem('phone')
-    const [isFetching, setIsFetching] = useState(false)
-    const [err, setErr] = useState(false)
-
-    useEffect(() => {
-        setIsFetching(true)
-    }, [])
-
-    useEffect(() => {
-        axios.get('https://ibank2.cbk.kg/check-debt/api?phone=' + phone)
-            .then(res => {
-                setIsFetching(false)
-                setDebtor(res.data.debtor)
-                setCases(res.data.cases)
-            })
-            .catch(err => setErr(true))
-    }, []);
-
-    if (err) {
-        return <Error />
-    }
+    const debtor = JSON.parse(localStorage.getItem('debtor'))
+    const cases = JSON.parse(localStorage.getItem('cases'))
+  
     return (
-        <>
-            {isFetching ? <Preloader /> : <div className='wrapper'>
+      <div className='wrapper'>
                 <div className='content'>
                     {cases.map(c =>
                         <div>
@@ -51,8 +30,7 @@ const Content = () => {
                     }
                     <a className='button'> <span> </span> Поделиться </a>
                 </div>
-            </div>}
-        </>
+            </div>
     );
 };
 

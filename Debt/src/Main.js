@@ -25,9 +25,10 @@ const Main = () => {
         axios.get('https://ibank2.cbk.kg/check-debt/api?phone=' + phone)
             .then(res => {
                 setIsFetching(false)
-                setDebtor(res.data.debtor);
+                setDebtor(res.data.debtor)
                 setCases(res.data.cases)
-                console.log(res.data)
+                localStorage.setItem('debtor', JSON.stringify(res.data.debtor))
+                localStorage.setItem('cases', JSON.stringify(res.data.cases))
             })
             .catch( err => setErr(true))
     }, []);

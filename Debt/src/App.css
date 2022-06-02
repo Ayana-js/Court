@@ -22,14 +22,17 @@
   font-weight: 600;
   font-size: 15px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 328px;
-  height: 108px;
   border-radius: 12px;
-  box-shadow: 0px 0px 20px rgba(21, 43, 71, 0.1);
   margin: 12px 12px;
+  background-color: #F6F8F8;
+  padding: 16px 0 16px 0;
+}
+
+.header img {
+  margin-right: 10px;
 }
 
 .main {
