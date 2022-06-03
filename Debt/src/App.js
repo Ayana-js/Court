@@ -1,15 +1,15 @@
 import './App.css';
 import { Route, Routes, BrowserRouter as Router} from 'react-router-dom'
-import Main from './Main';
-import Content from './Content';
+import MainContainer from './Main';
+import ContentContainer from './Content';
 
 function App() {
   return (
     <div className='App'>
       <Router>            
         <Routes>
-        <Route path='/check-debt' element={<Main/>}/>
-        <Route path='/check-debt/content' element={<Content/>}/>
+        <Route path='/check-debt' element={<MainContainer/>}/>
+        <Route path='/check-debt/content' element={<ContentContainer/>}/>
       </Routes>
       </Router>
     </div>
