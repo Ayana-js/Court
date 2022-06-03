@@ -49,7 +49,6 @@ const Main = (props) => {
                         <div className='main-content' onClick={() => {props.addCase(cas); props.addDebtor(debtor)}}>
                             <p>Номер дела: № {cas.case_number}</p>
                             <img src={path} />
-                            {/* <Content c={c} debtor={debtor} /> */}
                         </div>
                         </NavLink>
                     )}
@@ -62,11 +61,9 @@ const Main = (props) => {
 let mapStateToDispatch = (dispatch) => {
     return {
         addCase: (preload) => {
-            debugger
             dispatch(setCases(preload))
         },
         addDebtor: (preload) => {
-            debugger
             dispatch(setDebtor(preload))
         }
     }
