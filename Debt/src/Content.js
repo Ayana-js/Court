@@ -9,14 +9,14 @@ const Content = ({debtor, cases}) => {
                 <div className='content'>
                         <div>
                             <h2> {debtor.first_name} {debtor.last_name} {debtor.patronymic_name}</h2>
+                            <p className='description'>Номер дела</p>
+                            <p className='text'>{cases.case_number}</p>
                             <p className='description'> Судебный орган </p>
                             <p className='text'> {cases.court} </p>
                             <p className='description'>Судебный исполнитель</p>
                             <p className='text'>{cases.executor? cases.executor.full_name: '-------'}</p>
                             <p className='description'>Номер телефона</p>
                             <p className='text'>{cases.executor? cases.executor.phone_number: '-------'}</p>
-                            <p className='description'>Номер дела</p>
-                            <p className='text'>{cases.case_number}</p>
                             <p className='description'>Категория задолженности</p>
                             <p className='text'>{cases.claim_category}</p>
                             <p className='description'>Сумма задолженности</p>
