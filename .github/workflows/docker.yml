@@ -30,4 +30,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: odbodev/debt:latest
+          tags: odbodev/debtp:latest
