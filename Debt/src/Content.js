@@ -20,7 +20,7 @@ const Content = ({debtor, cases}) => {
                             <p className='description'>Категория задолженности</p>
                             <p className='text'>{cases.claim_category}</p>
                             <p className='description'>Сумма задолженности</p>
-                            <p className='text'> {cases.sum} сом</p>
+                            <p className='text'> {cases.sum}</p>
                         </div>
                     <a className='button'> <span> </span> Поделиться </a>
                 </div>
