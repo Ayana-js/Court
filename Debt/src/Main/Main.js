@@ -11,14 +11,16 @@ import { setCases, setDebtor } from '../redux/reducer';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import Warning from '../Warning/Warning';
+import Modal from '../Preloader/Modal/Modal';
 
 const Main = (props) => {
     const [debtor, setDebtor] = useState({})
     const [cases, setCases] = useState([])
-    const [searchParams] = useSearchParams();
+    const [searchParams] = useSearchParams()
     const phone = searchParams.get('phone')
     const [isFetching, setIsFetching] = useState(true)
     const [err, setErr] = useState(false)
+    const [confirm, setConfirm] = useState(false)
     // const cases = [{case_number: 2434},
     //                {case_number: 4738},
     //                {case_number: 4384}]
@@ -52,6 +54,7 @@ const Main = (props) => {
 
     return (
         <>
+        {!confirm ? <Modal setConfirm={setConfirm} />: <>
         {isFetching? <Preloader />:  <div className='wrapper_main'>
             <div className='header'>
                 <img src={user} />
@@ -71,7 +74,7 @@ const Main = (props) => {
                     </NavLink>
                     )}
                 </div>
-        </div>}
+        </div>} </> }
     </>
 )}
 

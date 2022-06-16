@@ -77,16 +77,12 @@
   font-size: 15px;
 }
 
-#id2 {
+#id3 {
   border: none;
 }
 
 .link {
   text-decoration: none;
-}
-
-.link:last-child {
-  border: none;
 }
 
 .content {

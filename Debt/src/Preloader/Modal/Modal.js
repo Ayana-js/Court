@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Modal.css'
 
-const Modal = () => {
+const Modal = (props) => {
     const [active, setActive] = useState(true)
     return (
         <div className={active ? "modal active" : "modal"} style={{ display: active ? "flex" : "none" }}>
@@ -13,9 +13,8 @@ const Modal = () => {
                     Банк не собирает, не обрабатывает и не имеет доступа к данной информации, 
                     а также не несет ответственности за ее полноту и содержание.</span>
                     <a className='content_btn_cancel'>Отмена</a>
-                <Link to='/debtp/main' className='content_btn' onClick={() => setActive(false)}>Продролжить</Link>
+                <a className='content_btn' onClick={() => {setActive(false); props.setConfirm(true)}}>Продолжить</a>
             </div>
-            
         </div>
     );
 };

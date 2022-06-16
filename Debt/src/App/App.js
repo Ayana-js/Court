@@ -9,9 +9,8 @@ function App() {
     <div className='App'>
       <Router>            
         <Routes>
-        <Route path='/debtp/main' element={<MainContainer/>}/>
         <Route path='/debtp/content' element={<ContentContainer/>}/>
-        <Route path='/debtp' element={<Modal/>}/>
+        <Route path='/debtp' element={<MainContainer/>}/>
       </Routes>
       </Router>
     </div>
