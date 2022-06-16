@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nunito&display=swap');
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition-duration: 5s;
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 340px;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.modal_content p {
+    text-align: center;
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    margin: 0;
+}
+
+.modal_content span {
+    text-align: center;
+    font-family: 'Nunito';
+    color: #6F6F6F;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 8px;
+}
+
+.content_btn {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    background: #FEDD2C;
+    color: black;
+    border-radius: 12px;
+    width: 312px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 15px 10px;
+}
+
+.content_btn_cancel {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    background: #C9CECF;
+    color: black;
+    border-radius: 12px;
+    width: 312px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 15px 10px;
+}

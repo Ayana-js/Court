@@ -1,15 +1,17 @@
 import './App.css';
 import { Route, Routes, BrowserRouter as Router} from 'react-router-dom'
-import MainContainer from './Main';
-import ContentContainer from './Content';
+import MainContainer from '../Main/Main';
+import ContentContainer from '../Content/Content';
+import Modal from '../Preloader/Modal/Modal';
 
 function App() {
   return (
     <div className='App'>
       <Router>            
         <Routes>
-        <Route path='/debtp' element={<MainContainer/>}/>
+        <Route path='/debtp/main' element={<MainContainer/>}/>
         <Route path='/debtp/content' element={<ContentContainer/>}/>
+        <Route path='/debtp' element={<Modal/>}/>
       </Routes>
       </Router>
     </div>

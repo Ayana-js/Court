@@ -1,10 +1,12 @@
-import React from 'react';
-import error from './img/smile.svg'
+import React, { useEffect, useState } from 'react';
+import error from '../img/smile.svg'
 import './Error.css'
-import logo from "./img/logo.svg";
-import mbank from "./img/logo-mbank.svg";
+import logo from "../img/logo.svg";
+import mbank from "../img/logo-mbank.svg";
+import Modal from '../Preloader/Modal/Modal';
 
 const Error = () => {
+   
     return (
         <div className='wrapper__error'>
             <div className="error-item">
@@ -18,7 +20,7 @@ const Error = () => {
                     <img src={mbank} alt=""/>
                 </div>
                 <div className="int_text">
-                    <p>Разработано совместно с <strong> СУДЕБНЫМ <br/> ДЕПАРТАМЕНТОМ при Верховном суде Кыргызской Республики
+                    <p>Разработано совместно с <br/> <strong> СУДЕБНЫМ ДЕПАРТАМЕНТОМ при Верховном суде Кыргызской Республики
                       </strong> </p>
                 </div>
             </div>

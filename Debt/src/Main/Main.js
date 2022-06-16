@@ -1,27 +1,37 @@
-import './App.css';
-import Error from './Error';
-import Preloader from './Preloader';
+import '../App/App.css';
+import Error from '../Error/Error';
+import Preloader from '../Preloader/Preloader';
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom';
-import user from './img/user.svg'
-import path from './img/path.svg'
+import user from '../img/user.svg'
+import path from '../img/path.svg'
 import React, { useEffect, useState } from 'react';
 import {NavLink} from 'react-router-dom'
-import { setCases, setDebtor } from './redux/reducer';
+import { setCases, setDebtor } from '../redux/reducer';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
+import Warning from '../Warning/Warning';
 
 const Main = (props) => {
     const [debtor, setDebtor] = useState({})
     const [cases, setCases] = useState([])
     const [searchParams] = useSearchParams();
     const phone = searchParams.get('phone')
-    const [isFetching, setIsFetching] = useState(false)
-    const [err, setErr] = useState(false) 
-    const lastElement = cases.slice(-1)
-  
-    useEffect(() => {
-        setIsFetching(true)
-    }, [])
+    const [isFetching, setIsFetching] = useState(true)
+    const [err, setErr] = useState(false)
+    // const cases = [{case_number: 2434},
+    //                {case_number: 4738},
+    //                {case_number: 4384}]
+
+    //     useEffect(() => {
+    //         setTimeout(() => {
+    //             setIsFetching(false)
+    //         }, 4000 )
+    //     }, [])
+
+        // useEffect(() => {
+        //     setErr(true)
+        // }, [err])
 
     useEffect(() => {
         axios.get('https://api.mbank.kg/debtp/api/check-debt?phone=' + phone, {
@@ -46,22 +56,23 @@ const Main = (props) => {
             <div className='header'>
                 <img src={user} />
                 <p>{debtor.first_name} {debtor.last_name} {debtor.patronymic_name}</p>
-            </div>   
+            </div>
                 <div className='main'>
                     {cases.map((cas,i) =>
-                     <NavLink to={`/debtp/content`}  className='link' key={cas.case_number} >
-                        <div
-                        className={cases.length >  1 ? 'main-content-line': 'main-content'}
-                            onClick={() => {props.addCase(cas);
-                                            props.addDebtor(debtor)}}>  
+                     <NavLink to={`/debtp/content`}  className='link' key={i} >
+                        <div id={'id' + i}
+                        className={cases.length > 1 ? 'main-content-line': 'main-content'}
+                            onClick={() => {props.addCase(cas)
+                                            props.addDebtor(debtor)}}
+                            >
                             <p>Номер дела: № {cas.case_number}</p>
                             <img src={path} />
                         </div>
-                     </NavLink>
+                    </NavLink>
                     )}
                 </div>
-        </div>} 
-        </>
+        </div>}
+    </>
 )}
 
 let mapStateToDispatch = (dispatch) => {
