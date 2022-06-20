@@ -2,7 +2,6 @@ import './App.css';
 import { Route, Routes, BrowserRouter as Router} from 'react-router-dom'
 import MainContainer from '../Main/Main';
 import ContentContainer from '../Content/Content';
-import Modal from '../Preloader/Modal/Modal';
 
 function App() {
   return (
