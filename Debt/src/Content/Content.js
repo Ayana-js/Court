@@ -1,8 +1,17 @@
 import '../App/App.css';
 import React from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 const Content = ({debtor, cases}) => {
+
+    const onSend =  (() => {
+        axios.post('', {
+            cases: cases,
+            debtor: debtor
+        })
+        .then( console.log(cases, debtor))
+    })
   
     return (
       <div className='wrapper'>
@@ -30,7 +39,7 @@ const Content = ({debtor, cases}) => {
                             <p className='text'> {cases.sum}</p>
                             {/* <p className='text'> grftgvfrgv </p> */}
                         </div>
-                    <a className='button'> <span> </span> Поделиться </a>
+                    <a className='button' onClick={() => onSend()}> <span> </span> Поделиться </a>
                 </div>
             </div>
     );

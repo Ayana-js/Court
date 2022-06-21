@@ -3,7 +3,6 @@ import error from '../img/smile.svg'
 import './Error.css'
 import logo from "../img/logo.svg";
 import mbank from "../img/logo-mbank.svg";
-import Modal from '../Preloader/Modal/Modal';
 
 const Error = () => {
    

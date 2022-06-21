@@ -9,8 +9,7 @@ import React, { useEffect, useState } from 'react';
 import {NavLink} from 'react-router-dom'
 import { setCases, setDebtor } from '../redux/reducer';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
-import Warning from '../Warning/Warning';
+
 import Modal from '../Preloader/Modal/Modal';
 
 const Main = (props) => {
@@ -62,7 +61,7 @@ const Main = (props) => {
             </div>
                 <div className='main'>
                     {cases.map((cas,i) =>
-                     <NavLink to={`/debtp/content`}  className='link' key={i} >
+                     <NavLink to={`debtp/content`}  className='link' key={i} >
                         <div id={'id' + i}
                         className={cases.length > 1 ? 'main-content-line': 'main-content'}
                             onClick={() => {props.addCase(cas)
