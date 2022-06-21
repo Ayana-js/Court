@@ -4,13 +4,25 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 const Content = ({debtor, cases}) => {
+    console.log({
+        name: debtor.first_name + ' ' + debtor.last_name + ' ' + debtor.patronymic_name,
+        case_number: cases.case_number,
+        court: cases.court,
+        executor: cases.executor.full_name,
+        executor_phone_number: cases.executor.phone_number,
+        claim_category: cases.claim_category
+    });
 
     const onSend =  (() => {
         axios.post('', {
-            cases: cases,
-            debtor: debtor
+            name: debtor.first_name + ' ' + debtor.last_name + ' ' + debtor.patronymic_name,
+            case_number: cases.case_number,
+            court: cases.court,
+            executor: cases.executor.full_name,
+            executor_phone_number: cases.executor.phone_number,
+            claim_category: cases.claim_category
         })
-        .then( console.log(cases, debtor))
+        .then( console.log())
     })
     
     return (
