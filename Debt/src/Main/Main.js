@@ -61,7 +61,7 @@ const Main = (props) => {
             </div>
                 <div className='main'>
                     {cases.map((cas,i) =>
-                     <NavLink to={`debtp/content`}  className='link' key={i} >
+                     <NavLink to={`content`}  className='link' key={i} >
                         <div id={'id' + i}
                         className={cases.length > 1 ? 'main-content-line': 'main-content'}
                             onClick={() => {props.addCase(cas)

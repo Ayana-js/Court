@@ -12,7 +12,7 @@ const Content = ({debtor, cases}) => {
         })
         .then( console.log(cases, debtor))
     })
-  
+    
     return (
       <div className='wrapper'>
                 <div className='content'>
