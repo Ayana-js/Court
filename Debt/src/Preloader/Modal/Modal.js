@@ -4,10 +4,11 @@ import './Modal.css'
 
 const Modal = (props) => {
     const [active, setActive] = useState(true)
-    onCancel = () => {
+
+    const onCancel = (() => {
         axios.get('https://api.mbank.kg/debtp/api/cancel')
         .then(res => console.log(res.data))
-    }
+    })
     return (
         <div className={active ? "modal active" : "modal"} style={{ display: active ? "flex" : "none" }}>
             <div className="modal_content" onClick={e => e.stopPropagation()}>
