@@ -14,7 +14,7 @@ const Content = ({debtor, cases}) => {
     });
 
     const onSend =  (() => {
-        axios.post('', {
+        axios.post('https://api.mbank.kg/debtp/api/share', {
             name: debtor.first_name + ' ' + debtor.last_name + ' ' + debtor.patronymic_name,
             case_number: cases.case_number,
             court: cases.court,
@@ -22,7 +22,7 @@ const Content = ({debtor, cases}) => {
             executor_phone_number: cases.executor.phone_number,
             claim_category: cases.claim_category
         })
-        .then( console.log())
+        .then(res => console.log(res))
     })
     
     return (
