@@ -7,7 +7,7 @@ import user from '../img/user.svg'
 import path from '../img/path.svg'
 import React, { useEffect, useState } from 'react';
 import {NavLink} from 'react-router-dom'
-import { setCases, setDebtor } from '../redux/reducer';
+import { setCases, setDebtor, setError } from '../redux/reducer';
 import { connect } from 'react-redux';
 import Modal from '../Modal/Modal';
 
@@ -30,7 +30,8 @@ const Main = (props) => {
                 setDebtor(res.data.debtor)
                 setCases(res.data.cases)
             })
-            .catch(() => setErr(true))
+            .catch(() => {setErr(true)
+                          props.addError(true)})
     }, [])
 
     if (err) {
@@ -70,6 +71,9 @@ let mapStateToDispatch = (dispatch) => {
         },
         addDebtor: (preload) => {
             dispatch(setDebtor(preload))
+        },
+        addError: (preload) => {
+            dispatch(setError(preload))
         }
     }
 }

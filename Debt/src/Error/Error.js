@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import error from '../img/smile.svg'
 import './Error.css'
 import logo from "../img/logo.svg";

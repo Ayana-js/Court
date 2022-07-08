@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Modal.css'
+import { connect } from 'react-redux';
 
 const Modal = (props) => {
     const [active, setActive] = useState(true)
@@ -18,10 +20,20 @@ const Modal = (props) => {
                     Банк не собирает, не обрабатывает и не имеет доступа к данной информации, 
                     а также не несет ответственности за ее полноту и содержание.</span>
                     <a className='content_btn_cancel' onClick={() => onCancel()} >Отмена</a>
-                <a className='content_btn' onClick={() => {setActive(false); props.setConfirm(true)}}>Продолжить</a>
+                    {props.error? <Link to='/error' className='content_btn' onClick={() => {setActive(false)}}>Продолжить</Link>:
+                    <a className='content_btn' onClick={() => {setActive(false); props.setConfirm(true)}}>Продолжить</a>
+                    }
             </div>
         </div>
     );
 };
 
-export default Modal;
+let mapStateToProps = (state) => {
+    return {
+       error: state.reducer.error
+    }
+}
+
+const ModalContainer = connect(mapStateToProps, null)(Modal)
+
+export default ModalContainer;
