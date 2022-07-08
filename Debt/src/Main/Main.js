@@ -21,7 +21,7 @@ const Main = (props) => {
     const [confirm, setConfirm] = useState(false)
 
     useEffect(() => {
-        axios.get('https://10.100.78.5:5088/check-debt?phone=' + phone, {
+        axios.get('https://api.mbank.kg/debtp/api/check-debt?phone=' + phone, {
             mode: 'no-cors',
             'Access-Control-Allow-Origin': '*'
         })
