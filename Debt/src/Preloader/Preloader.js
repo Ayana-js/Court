@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import logo from '../img/logo.svg'
 import mbank from '../img/logo-mbank.svg'
 import './Preloader.css'
@@ -18,7 +18,7 @@ const Preloader = () => {
                         <img src={mbank} alt=""/>
                     </div>
                     <div>
-                    <p>Разработано совместно с <br/> <strong> СУДЕБНЫМ ДЕПАРТАМЕНТОМ при Верховном суде Кыргызской Республики
+                    <p>Разработано совместно с <br/> <strong> Судебным департаментом при Верховном суде Кыргызской Республики
                       </strong> </p>
                     </div>
                 </div>

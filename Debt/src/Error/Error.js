@@ -14,12 +14,12 @@ const Error = () => {
             </div>
             <div className="preload__content_">
                 <div className="logo">
-                    <img src={logo} alt=""/>
+                    <img src={logo} alt=" "/>
                     <span>+</span>
-                    <img src={mbank} alt=""/>
+                    <img src={mbank} alt=" "/>
                 </div>
                 <div className="int_text">
-                    <p>Разработано совместно с <br/> <strong> СУДЕБНЫМ ДЕПАРТАМЕНТОМ при Верховном суде Кыргызской Республики
+                    <p>Разработано совместно с <br/> <strong>Судебным департаментом при Верховном суде Кыргызской Республики
                       </strong> </p>
                 </div>
             </div>

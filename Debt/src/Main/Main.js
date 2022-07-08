@@ -9,8 +9,7 @@ import React, { useEffect, useState } from 'react';
 import {NavLink} from 'react-router-dom'
 import { setCases, setDebtor } from '../redux/reducer';
 import { connect } from 'react-redux';
-
-import Modal from '../Preloader/Modal/Modal';
+import Modal from '../Modal/Modal';
 
 const Main = (props) => {
     const [debtor, setDebtor] = useState({})
@@ -20,22 +19,9 @@ const Main = (props) => {
     const [isFetching, setIsFetching] = useState(true)
     const [err, setErr] = useState(false)
     const [confirm, setConfirm] = useState(false)
-    // const cases = [{case_number: 2434},
-    //                {case_number: 4738},
-    //                {case_number: 4384}]
-
-    //     useEffect(() => {
-    //         setTimeout(() => {
-    //             setIsFetching(false)
-    //         }, 4000 )
-    //     }, [])
-
-        // useEffect(() => {
-        //     setErr(true)
-        // }, [err])
 
     useEffect(() => {
-        axios.get('https://api.mbank.kg/debtp/api/check-debt?phone=' + phone, {
+        axios.get('https://10.100.78.5:5088/check-debt?phone=' + phone, {
             mode: 'no-cors',
             'Access-Control-Allow-Origin': '*'
         })
@@ -53,10 +39,10 @@ const Main = (props) => {
 
     return (
         <>
-        {!confirm ? <Modal setConfirm={setConfirm} />: <>
+        {err ? <Modal setConfirm={setConfirm} />: <>
         {isFetching? <Preloader />:  <div className='wrapper_main'>
             <div className='header'>
-                <img src={user} />
+                <img src={user} alt=" "/>
                 <p>{debtor.first_name} {debtor.last_name} {debtor.patronymic_name}</p>
             </div>
                 <div className='main'>
@@ -68,7 +54,7 @@ const Main = (props) => {
                                             props.addDebtor(debtor)}}
                             >
                             <p>Номер дела: № {cas.case_number}</p>
-                            <img src={path} />
+                            <img src={path} alt=" "/>
                         </div>
                     </NavLink>
                     )}
