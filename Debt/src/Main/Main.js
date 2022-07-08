@@ -34,12 +34,12 @@ const Main = (props) => {
     }, [])
 
     if (err) {
-        return <Error />
+        return <Modal />
     }
 
     return (
         <>
-        {err ? <Modal setConfirm={setConfirm} />: <>
+        {!confirm? <Modal setConfirm={setConfirm} />: <>
         {isFetching? <Preloader />:  <div className='wrapper_main'>
             <div className='header'>
                 <img src={user} alt=" "/>
