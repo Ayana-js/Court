@@ -30,6 +30,7 @@ const Main = (props) => {
                 setCases(res.data.cases)
             })
             .catch(() => {setErr(true)
+                          setIsFetching(false)
                           props.addError(true)})
     }, [])
 
