@@ -1,5 +1,4 @@
 import '../App/App.css';
-import Error from '../Error/Error';
 import Preloader from '../Preloader/Preloader';
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom';
@@ -34,9 +33,9 @@ const Main = (props) => {
                           props.addError(true)})
     }, [])
 
-    if (err) {
-        return <Modal />
-    }
+    // if (err) {
+    //     return <Modal />
+    // }
 
     return (
         <>
