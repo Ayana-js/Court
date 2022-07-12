@@ -40,8 +40,8 @@ const Main = (props) => {
 
     return (
         <>
-        {!confirm? <Modal setConfirm={setConfirm} />: <>
-        {isFetching? <Preloader />:  <div className='wrapper_main'>
+        {isFetching? <Preloader />:  <>
+        {!confirm? <Modal setConfirm={setConfirm} />: <div className='wrapper_main'>
             <div className='header'>
                 <img src={user} alt=" "/>
                 <p>{debtor.first_name} {debtor.last_name} {debtor.patronymic_name}</p>
